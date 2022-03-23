@@ -1,0 +1,67 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RangerManager : MonoBehaviour
+{
+    public GameObject bullet;
+    public State state = State.idle;
+
+    public float attack_delay = 1f;
+    private float attack_time = 0;
+
+    public Transform target = null;
+
+    public enum State
+    {
+        idle,
+        attack
+    }
+
+    private void Update()
+    {
+        if(target != null)
+        {
+            if(target.GetComponent<EnemyManager>().GetEnemyHp() <= 0)
+            {
+                state = State.idle;
+                target = null;
+            }
+            else
+            {
+                if(attack_time >= attack_delay)
+                {
+                    GameObject temp = Instantiate(bullet);
+                    temp.transform.SetParent(gameObject.transform);
+                    temp.GetComponent<Bullet>().target = this.target;
+                    temp.GetComponent<Bullet>().moveDirection = (target.position - transform.position).normalized;
+                    temp.transform.position = gameObject.transform.position;
+                    attack_time = 0;
+                }
+                else
+                {
+                    attack_time += Time.deltaTime;
+                }
+                
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "enemy")
+        {
+            if(target == null)
+                target = collision.transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision == target)
+        {
+            target = null;
+        }
+    }
+
+}

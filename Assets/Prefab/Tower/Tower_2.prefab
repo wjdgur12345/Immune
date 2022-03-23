@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4434405656256333810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4434405656256333708}
+  - component: {fileID: 4434405656256333811}
+  - component: {fileID: 4434405656256333709}
+  - component: {fileID: 4434405656256333710}
+  m_Layer: 0
+  m_Name: Tower_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4434405656256333708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434405656256333810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 123}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4434405656256333811
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434405656256333810}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6eebe3cffe9b86b489de5c3cb81f45be, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.12, y: 5.12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &4434405656256333709
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434405656256333810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.15}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &4434405656256333710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434405656256333810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104bd9d8b163a2f458ba53c9b69b61e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrice: 0
+  towerIndex: 1
+  tower_upgrade_tech1: 0
+  tower_upgrade_tech2: 0
+  tower_upgrade_level: 0
+  unitLimit: 3
+  currentUnit: 0
+  unitCreateCheckObject: {fileID: 6228315486464637832, guid: 01c16ba3b9c190646bdf0e047175f380,
+    type: 3}
+  unitsPref:
+  - {fileID: 2339195689854754339, guid: d6714aa8decbec347ab9e45a5345652b, type: 3}
+  - {fileID: 2339195689854754339, guid: 74a927b28bd5f4a499b70a5a04667e3f, type: 3}
+  - {fileID: 2339195689854754339, guid: c8aeec76995ae84428aa8af90da71073, type: 3}
+  - {fileID: 2339195689854754339, guid: d395158d735a61f44872f6c1bf60c1bc, type: 3}
+  - {fileID: 2339195689854754339, guid: 2d8189049f6b29446b484df8779b8604, type: 3}
+  - {fileID: 2339195689854754339, guid: 24ce0ca7cb2db0b48b8dfb8e0a13198b, type: 3}
+  - {fileID: 2339195689854754339, guid: b5c87a3887057a54cad24aa735c3551a, type: 3}
+  - {fileID: 2339195689854754339, guid: 32be0e488c4992c4c983779fbba0d292, type: 3}
+  - {fileID: 2339195689854754339, guid: 9eb0b36d34e89404e8a8c3b84cae9cf3, type: 3}
+  - {fileID: 2339195689854754339, guid: 2fbd88d521b683342b757f44819e60f8, type: 3}
+  unitWayPointX: 0
+  unitWayPointY: 0
+  upgradeCost: 0
+  default_cost: 0
+  spr_tech1: {fileID: 21300000, guid: 810ca942260408649881d39e2c45a139, type: 3}
+  spr_tech1_1:
+  - {fileID: 21300000, guid: 810ca942260408649881d39e2c45a139, type: 3}
+  - {fileID: 21300000, guid: 810ca942260408649881d39e2c45a139, type: 3}
+  spr_tech1_2:
+  - {fileID: 21300000, guid: 810ca942260408649881d39e2c45a139, type: 3}
+  - {fileID: 21300000, guid: 810ca942260408649881d39e2c45a139, type: 3}
+  spr_tech2: {fileID: 21300000, guid: 8384428f2774f3142969ad423a0b1824, type: 3}
+  spr_tech2_1:
+  - {fileID: 21300000, guid: 8384428f2774f3142969ad423a0b1824, type: 3}
+  - {fileID: 21300000, guid: 8384428f2774f3142969ad423a0b1824, type: 3}
+  spr_tech2_2:
+  - {fileID: 21300000, guid: 8384428f2774f3142969ad423a0b1824, type: 3}
+  - {fileID: 21300000, guid: 8384428f2774f3142969ad423a0b1824, type: 3}
+  spr_tech3: {fileID: 0}
+  spr_tech3_1: []
+  spr_tech3_2: []
+  tech1_cost: 1
+  tech1_1_cost: 0b0000000c0000000d000000
+  tech1_2_cost: 150000001600000017000000
+  tech2_cost: 2
+  tech2_1_cost: 0b0000000c0000000d000000
+  tech2_2_cost: 150000001600000017000000
+  tech3_cost: 3
+  tech3_1_cost: 0b0000000c0000000d000000
+  tech3_2_cost: 150000001600000017000000
