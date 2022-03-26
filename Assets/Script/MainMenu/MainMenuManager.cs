@@ -19,7 +19,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void GotoStage1()
     {
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("Stage1 Select");
     }
 
     public void GotoStage2()

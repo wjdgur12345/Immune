@@ -89,6 +89,8 @@
     <Compile Include="Assets\Script\MainMenu\TitleImageMouseClick.cs" />
     <Compile Include="Assets\Script\PauseManager.cs" />
     <Compile Include="Assets\Script\RangerManager.cs" />
+    <Compile Include="Assets\Script\StageButtonManager.cs" />
+    <Compile Include="Assets\Script\StageSelectManager.cs" />
     <Compile Include="Assets\Script\StageUIManager.cs" />
     <Compile Include="Assets\Script\StageWaveManager.cs" />
     <Compile Include="Assets\Script\Tower.cs" />
