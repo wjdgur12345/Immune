@@ -13,7 +13,7 @@ public class StageSelectManager : MonoBehaviour
     public void GotoStage(int n = 1)
     {
         string str = "Stage1-" + n.ToString();
-
+        Debug.Log(str);
         SceneManager.LoadScene(str);
     }
 }
