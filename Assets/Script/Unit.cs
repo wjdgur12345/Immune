@@ -45,6 +45,13 @@ public class Unit : MonoBehaviour
     private float regen_time = 0.0f;
     private float regen_time_limit = 0.5f;
 
+    //대식세포 관련 변수
+    [SerializeField]
+    private int death_count = 0;
+    public int death_count_limit = 5;
+    public GameObject poison_smoke;
+    //////////
+    
 
     public enum UnitState
     {
@@ -173,6 +180,24 @@ public class Unit : MonoBehaviour
                         attackDelay = 0;
                         target.GetComponent<EnemyManager>().ChangeHp(-damage);
                         targetHp = target.GetComponent<EnemyManager>().GetEnemyHp();
+
+
+                        //대식세포 킬카운트
+                        if(transform.parent.gameObject.GetComponent<Tower>().towerIndex == 1 &&
+                            transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1)
+                        {
+                            if (targetHp <= 0)
+                            {
+                                death_count++;
+                                if (death_count >= death_count_limit)
+                                {
+                                    state = UnitState.death;
+                                }
+                            }
+                        }
+                        //////////////
+                        
+
                     }   
                 }
                 else
@@ -190,8 +215,21 @@ public class Unit : MonoBehaviour
                 {
                     isDeath = false;
                     Instantiate(deathAnime, gameObject.transform);
+
+                    //대식세포 2-2상태에서 독구름생성
+                    if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 1)
+                    {
+                        poison_smoke.transform.position = transform.position;
+                        Instantiate(poison_smoke);
+                    }
+                    ////////
                 }
 
+
+                
 
                 color = sr.color;
                 color.a = 0;
@@ -222,6 +260,7 @@ public class Unit : MonoBehaviour
                 target = temp.transform;
                 //temp.SetTarget(transform);
                 targetHp = temp.GetEnemyHp();
+
             }
         }
     }

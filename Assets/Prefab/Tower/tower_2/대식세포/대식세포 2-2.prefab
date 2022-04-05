@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7724952304417738300}
   - component: {fileID: -8650063460126124717}
   m_Layer: 0
-  m_Name: "\uB300\uC2DD\uC138\uD3EC"
+  m_Name: "\uB300\uC2DD\uC138\uD3EC 2-2"
   m_TagString: unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83700ca58e0844647b428f7d8245eb77, type: 3}
+  m_Sprite: {fileID: 5858479730459764560, guid: 3f70a29dcff018f478dc72efdc051444,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,9 +109,13 @@ MonoBehaviour:
     type: 3}
   hp: 0
   maxHp: 500
-  damage: 8
+  damage: 40
   deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
   targetHp: 0
+  death_count: 0
+  death_count_limit: 5
+  poison_smoke: {fileID: 3694448048988989306, guid: 264c7275f006f324a8451438a3fc58c5,
+    type: 3}
 --- !u!58 &-1276365435204535136
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 2339195689854754339}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 524607ddc034e454e8ff32cae9f38974, type: 2}
+  m_Controller: {fileID: 9100000, guid: 035f22a5e9d988a4f89ec47b64c68dd1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
