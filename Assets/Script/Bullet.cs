@@ -14,6 +14,8 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         transform.position = new Vector3(transform.position.x,transform.position.y, target.position.z);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-moveDirection), 1f);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2339195689854754339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 4.25, z: -0.6118921}
+  m_LocalPosition: {x: -1.9, y: 4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6415071594826930004}
@@ -112,6 +112,9 @@ MonoBehaviour:
   damage: 0
   deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
   targetHp: 0
+  death_count: 0
+  death_count_limit: 5
+  poison_smoke: {fileID: 0}
 --- !u!58 &-1276365435204535136
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,7 +162,7 @@ Animator:
   m_GameObject: {fileID: 2339195689854754339}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3134941fe10b18d4b919fdc9bbc91d47, type: 2}
+  m_Controller: {fileID: 9100000, guid: e293989da0c5bfb47ae5a66b5756a6aa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -250,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75ef7ffc3ea5fc4797604d787d7468f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5998581993935888207, guid: 3bbc7de8d2dbcfd4c9adf1709cc419a0, type: 3}
+  bullet: {fileID: 5998581993935888207, guid: 841de97b474f92944aa553625da8ffd0, type: 3}
   state: 0
   attack_delay: 1
   target: {fileID: 0}

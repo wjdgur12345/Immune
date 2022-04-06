@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2339195689854754339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 4.25, z: -0.6118921}
+  m_LocalPosition: {x: -1.9, y: 4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,6 +112,9 @@ MonoBehaviour:
   damage: 8
   deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
   targetHp: 0
+  death_count: 0
+  death_count_limit: 5
+  poison_smoke: {fileID: 0}
 --- !u!58 &-1276365435204535136
 CircleCollider2D:
   m_ObjectHideFlags: 0

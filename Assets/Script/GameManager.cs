@@ -98,6 +98,32 @@ public class GameManager : MonoBehaviour
                 gray_image.transform.position = new Vector3(0, 0, -10);
                 home_button.transform.position = new Vector3(-4, -4);
                 restart_button.transform.position = new Vector3(4, -4);
+
+                //클리어 정보를 데이터매니저로 보냄
+                GameObject data_manager = GameObject.Find("GameDataManager");
+                data_manager.GetComponent<GameDataManager>().stage_node[data_manager.GetComponent<GameDataManager>().current_stage].state = 3;
+                int temp_star;
+
+                if (int.Parse(life_text.text) == 20)
+                    temp_star = 3;
+                else if (int.Parse(life_text.text) >= 10)
+                    temp_star = 2;
+                else
+                    temp_star = 1;
+
+                temp_star = temp_star - data_manager.GetComponent<GameDataManager>().stage_node[data_manager.GetComponent<GameDataManager>().current_stage].star;
+
+                if (temp_star < 0)
+                    temp_star = 0;
+
+                if(temp_star != 0)
+                {
+                    data_manager.GetComponent<GameDataManager>().stage_node[data_manager.GetComponent<GameDataManager>().current_stage].star += temp_star;
+                    data_manager.GetComponent<GameDataManager>().my_star += temp_star;
+                }
+                    
+
+
             }
             game_state = GameState.clear;
             //Debug.Log("clear");

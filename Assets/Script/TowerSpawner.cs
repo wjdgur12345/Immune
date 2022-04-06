@@ -66,7 +66,7 @@ public class TowerSpawner : MonoBehaviour
         Tower towerStatus = tower.GetComponent<Tower>();
         towerStatus.SetUnitWayPoint(unitWayPointX, unitWayPointY);
         //Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 pos = new Vector3(x, y, -9);
+        Vector3 pos = new Vector3(x, y, 0);
         tower.transform.position = pos;
 
         switch (createTowerIndex)

@@ -180,12 +180,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17951990}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1066.5114, y: -435.7242, z: 106.51278}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 77133110}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &77133109
 GameObject:
@@ -216,8 +216,9 @@ Transform:
   m_Children:
   - {fileID: 1234044860}
   - {fileID: 451544431}
+  - {fileID: 17951993}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &355308322
 GameObject:
@@ -1719,7 +1720,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 31.699997, y: -40}
-  m_SizeDelta: {x: 74, y: 85}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &105951513171028147
 MonoBehaviour:
@@ -1769,13 +1770,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 241113868999c45368c541a1b9af136e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d918fa8185ed4a3cba7643fb4248d54, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2971,6 +2972,7 @@ GameObject:
   - component: {fileID: 105951514205908790}
   - component: {fileID: 105951514205908789}
   - component: {fileID: 105951514205908788}
+  - component: {fileID: 105951514205908794}
   m_Layer: 0
   m_Name: Status_Coin
   m_TagString: Untagged
@@ -3111,6 +3113,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105951514205908786}
   m_CullTransparentMesh: 0
+--- !u!114 &105951514205908794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105951514205908786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3df8f10589cac34bb94bac40dad27e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game_data_manager: {fileID: 0}
+  state: 0
 --- !u!1 &105951514489498300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,8 +3193,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294357020
-  m_fontColor: {r: 0.10980392, g: 0.6901961, b: 0.9647059, a: 1}
+    rgba: 4278255615
+  m_fontColor: {r: 1, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3619,8 +3635,9 @@ GameObject:
   - component: {fileID: 105951514984572279}
   - component: {fileID: 105951514984572278}
   - component: {fileID: 105951514984572277}
+  - component: {fileID: 105951514984572283}
   m_Layer: 0
-  m_Name: Status_Gem
+  m_Name: Status_Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3759,6 +3776,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105951514984572275}
   m_CullTransparentMesh: 0
+--- !u!114 &105951514984572283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105951514984572275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3df8f10589cac34bb94bac40dad27e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game_data_manager: {fileID: 0}
+  state: 1
 --- !u!1 &105951514994764002
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,6 +4764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82088f8819a1dfc429fc5bd3b039c59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data_manager: {fileID: 0}
   StageSelectManager: {fileID: 1234044859}
   complect_sprite: {fileID: 21300000, guid: 1690c4ff958864e97a39ca54c3378cb4, type: 3}
   select_sprite: {fileID: 21300000, guid: c703bbc25269a4d89a979a5992f86b6c, type: 3}
@@ -4740,7 +4772,9 @@ MonoBehaviour:
   locked_sprite: {fileID: 21300000, guid: e7e5205428c894f729e00d2bea72a76a, type: 3}
   state: 1
   count_star: 2
+  stage_number: 1
   button_number: 1
+  need_star: 0
 --- !u!224 &167844269025964852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6323,6 +6357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82088f8819a1dfc429fc5bd3b039c59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data_manager: {fileID: 0}
   StageSelectManager: {fileID: 1234044859}
   complect_sprite: {fileID: 21300000, guid: 1690c4ff958864e97a39ca54c3378cb4, type: 3}
   select_sprite: {fileID: 21300000, guid: c703bbc25269a4d89a979a5992f86b6c, type: 3}
@@ -6330,7 +6365,9 @@ MonoBehaviour:
   locked_sprite: {fileID: 21300000, guid: e7e5205428c894f729e00d2bea72a76a, type: 3}
   state: 2
   count_star: 0
+  stage_number: 1
   button_number: 3
+  need_star: 4
 --- !u!114 &3527203453251957315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6539,6 +6576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82088f8819a1dfc429fc5bd3b039c59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data_manager: {fileID: 0}
   StageSelectManager: {fileID: 1234044859}
   complect_sprite: {fileID: 21300000, guid: 1690c4ff958864e97a39ca54c3378cb4, type: 3}
   select_sprite: {fileID: 21300000, guid: c703bbc25269a4d89a979a5992f86b6c, type: 3}
@@ -6546,7 +6584,9 @@ MonoBehaviour:
   locked_sprite: {fileID: 21300000, guid: e7e5205428c894f729e00d2bea72a76a, type: 3}
   state: 2
   count_star: 2
+  stage_number: 1
   button_number: 4
+  need_star: 8
 --- !u!114 &3527203453373390798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6683,7 +6723,7 @@ RectTransform:
   - {fileID: 105951513427200296}
   - {fileID: 167844268447678157}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6897,6 +6937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82088f8819a1dfc429fc5bd3b039c59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data_manager: {fileID: 0}
   StageSelectManager: {fileID: 1234044859}
   complect_sprite: {fileID: 21300000, guid: 1690c4ff958864e97a39ca54c3378cb4, type: 3}
   select_sprite: {fileID: 21300000, guid: c703bbc25269a4d89a979a5992f86b6c, type: 3}
@@ -6904,7 +6945,9 @@ MonoBehaviour:
   locked_sprite: {fileID: 21300000, guid: e7e5205428c894f729e00d2bea72a76a, type: 3}
   state: 2
   count_star: 0
+  stage_number: 1
   button_number: 2
+  need_star: 2
 --- !u!114 &3527203453625121006
 MonoBehaviour:
   m_ObjectHideFlags: 0

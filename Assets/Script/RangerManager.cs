@@ -35,6 +35,8 @@ public class RangerManager : MonoBehaviour
                     temp.transform.SetParent(gameObject.transform);
                     temp.GetComponent<Bullet>().target = this.target;
                     temp.GetComponent<Bullet>().moveDirection = (target.position - transform.position).normalized;
+                    temp.transform.rotation = new Quaternion(0, 0, Vector3.SignedAngle(transform.up,
+                        target.transform.position - temp.transform.position, -transform.forward), 0);
                     temp.transform.position = gameObject.transform.position;
                     attack_time = 0;
                 }
@@ -49,11 +51,24 @@ public class RangerManager : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        /*
         if(collision.tag == "enemy")
         {
             if(target == null)
                 target = collision.transform;
         }
+        */
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if(collision.tag == "enemy")
+        {
+            if(target == null)
+                target = collision.transform;
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

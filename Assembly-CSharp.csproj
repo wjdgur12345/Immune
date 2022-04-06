@@ -85,9 +85,11 @@
     <Compile Include="Assets\Script\EnemyMovement.cs" />
     <Compile Include="Assets\Script\EnemySpawner.cs" />
     <Compile Include="Assets\Script\EnemySubObject.cs" />
+    <Compile Include="Assets\Script\GameDataManager.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\MainMenu\MainMenuManager.cs" />
     <Compile Include="Assets\Script\MainMenu\TitleImageMouseClick.cs" />
+    <Compile Include="Assets\Script\MainMenuUIState.cs" />
     <Compile Include="Assets\Script\PauseManager.cs" />
     <Compile Include="Assets\Script\PoisonSmoke.cs" />
     <Compile Include="Assets\Script\RangerManager.cs" />
