@@ -223,7 +223,8 @@ public class Unit : MonoBehaviour
                         transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 1)
                     {
                         poison_smoke.transform.position = transform.position;
-                        Instantiate(poison_smoke);
+                        GameObject temp = Instantiate(poison_smoke);
+                        temp.transform.SetParent(GameObject.Find("Units").transform);
                     }
                     ////////
                 }

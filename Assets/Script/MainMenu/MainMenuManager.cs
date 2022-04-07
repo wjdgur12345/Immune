@@ -64,7 +64,7 @@ public class MainMenuManager : MonoBehaviour
         {
             case MainMenuState.main:
                 Application.Quit();
-                UnityEditor.EditorApplication.isPlaying = false; // 빌드시 삭제
+                //UnityEditor.EditorApplication.isPlaying = false; // 빌드시 삭제
                 break;
             case MainMenuState.stage1:
                 stage_select.gameObject.SetActive(true);

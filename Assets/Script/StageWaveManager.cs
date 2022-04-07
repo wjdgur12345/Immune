@@ -20,6 +20,9 @@ public class StageWaveManager : MonoBehaviour
     public Button wave_button;
 
     public int[][] enemy_array;
+
+    public GameObject start_button_loaging_bar;
+
     public enum FieldState 
     {
         idle,
@@ -28,6 +31,10 @@ public class StageWaveManager : MonoBehaviour
 
     private void Start()
     {
+        start_button_loaging_bar.GetComponent<Image>().fillAmount = 0;
+
+
+        //웨이브에 등장하는 적 유닛들
         enemy_array = new int[5][]
         {
             new int[] {},
@@ -44,6 +51,11 @@ public class StageWaveManager : MonoBehaviour
         if(field_state == FieldState.idle)
         {
             wave_button.GetComponent<Button>().interactable = true;
+            if(wave_count != 0)
+            {
+                start_button_loaging_bar.GetComponent<Image>().fillAmount -= Time.deltaTime / 15f;
+                if (start_button_loaging_bar.GetComponent<Image>().fillAmount <= 0) WaveStart();
+            }
         }
         else if (field_state == FieldState.play)
         {
@@ -52,6 +64,7 @@ public class StageWaveManager : MonoBehaviour
             {
                 field_state = FieldState.idle;
                 enemy_spawner.GetComponent<EnemySpawner>().spawn_way_count = 1;
+                start_button_loaging_bar.GetComponent<Image>().fillAmount = 1;
             }
         }
     }
@@ -65,6 +78,8 @@ public class StageWaveManager : MonoBehaviour
        
 
         enemy_spawner.GetComponent<EnemySpawner>().EnemySpawn(enemy_array[wave_count], max_enemy_count);
+
+        start_button_loaging_bar.GetComponent<Image>().fillAmount = 0;
 
         //Debug.Log("max :" + max_wave_count + "\nwave : " + wave_count);
     }
