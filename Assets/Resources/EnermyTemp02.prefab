@@ -138,8 +138,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c0e46e65e4bed240bbbf622716b6402, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.125
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -147,7 +147,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.8433213
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -257,7 +257,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.20480001}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
 --- !u!50 &5739698513952707248
 Rigidbody2D:
   serializedVersion: 4

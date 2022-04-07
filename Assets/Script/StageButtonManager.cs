@@ -139,7 +139,7 @@ public class StageButtonManager : MonoBehaviour
             case ButtonState.complet:
             case ButtonState.nomal:
             case ButtonState.select:
-                StageSelectManager.GetComponent<StageSelectManager>().GotoStage(button_number);
+                StageSelectManager.GetComponent<StageSelectManager>().GotoStage1(button_number);
                 game_data_manager.GetComponent<GameDataManager>().current_stage = my_number;
                 break;
         }

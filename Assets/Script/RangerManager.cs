@@ -20,6 +20,11 @@ public class RangerManager : MonoBehaviour
 
     private void Update()
     {
+        if(transform.parent.GetComponent<Unit>().state == Unit.UnitState.attack)
+        {
+            target = transform.parent.GetComponent<Unit>().target;
+        }
+
         if(target != null)
         {
             if(target.GetComponent<EnemyManager>().GetEnemyHp() <= 0)
@@ -39,6 +44,7 @@ public class RangerManager : MonoBehaviour
                         target.transform.position - temp.transform.position, -transform.forward), 0);
                     temp.transform.position = gameObject.transform.position;
                     attack_time = 0;
+                    target = null;
                 }
                 else
                 {
@@ -51,6 +57,20 @@ public class RangerManager : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        
+        if(collision.tag == "enemy")
+        {
+            if(target == null && transform.parent.GetComponent<Unit>().state != Unit.UnitState.attack) 
+            {
+                target = collision.transform;
+            }
+                
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         /*
         if(collision.tag == "enemy")
         {
@@ -60,23 +80,11 @@ public class RangerManager : MonoBehaviour
         */
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if(collision.tag == "enemy")
-        {
-            if(target == null)
-                target = collision.transform;
-        }
-        
-    }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision == target)
-        {
-            target = null;
-        }
+        
+       
+        
     }
 
 }

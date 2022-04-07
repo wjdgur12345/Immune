@@ -64,7 +64,6 @@ public class Tower : MonoBehaviour
         //transform.position = new Vector3(transform.position.x, transform.position.y, 133);
 
         sr = GetComponent<SpriteRenderer>();
-        createUnitCooldown = 2.0f;
         isCreateUnit = false;
         correntUnits = new GameObject[unitLimit];
         //upgradeButtonToggle = false;
@@ -99,7 +98,7 @@ public class Tower : MonoBehaviour
         if (!isCreateUnit)
             createUnitCooldown += Time.deltaTime;
 
-        if (createUnitCooldown >= 0.3f)
+        if (createUnitCooldown >= 3f)
         {
             createUnitCooldown = 0f;
             if (currentUnit < unitLimit)

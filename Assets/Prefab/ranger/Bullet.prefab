@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 15
-  attack_count: 2
+  damage: 7
+  attack_count: 1
   target: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!61 &191735671367988726

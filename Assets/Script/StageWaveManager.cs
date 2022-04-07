@@ -38,7 +38,7 @@ public class StageWaveManager : MonoBehaviour
         enemy_array = new int[5][]
         {
             new int[] {},
-            new int[] { 0, 1, 2 },
+            new int[] { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
             new int[] { 1},
             new int[] { 0},
             new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
@@ -50,15 +50,17 @@ public class StageWaveManager : MonoBehaviour
 
         if(field_state == FieldState.idle)
         {
+            Time.timeScale = 3f;
             wave_button.GetComponent<Button>().interactable = true;
             if(wave_count != 0)
             {
-                start_button_loaging_bar.GetComponent<Image>().fillAmount -= Time.deltaTime / 15f;
+                start_button_loaging_bar.GetComponent<Image>().fillAmount -= Time.deltaTime / 45f;
                 if (start_button_loaging_bar.GetComponent<Image>().fillAmount <= 0) WaveStart();
             }
         }
         else if (field_state == FieldState.play)
         {
+            Time.timeScale = 1f;
             wave_button.GetComponent<Button>().interactable = false;
             if(enemy_count == 0)
             {

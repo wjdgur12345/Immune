@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 2;
     public int damage = 5;
-    public int attack_count = 2;
+    public int attack_count = 15;
 
     public Transform target = null;
     public Vector3 moveDirection = Vector3.zero;

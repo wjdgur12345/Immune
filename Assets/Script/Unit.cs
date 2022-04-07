@@ -196,8 +196,6 @@ public class Unit : MonoBehaviour
                             }
                         }
                         //////////////
-                        
-
                     }   
                 }
                 else
@@ -236,6 +234,7 @@ public class Unit : MonoBehaviour
                 color.a = 0;
                 sr.color = color;
 
+                transform.Find("Shadow").gameObject.SetActive(false);
                 Destroy(gameObject, 1f);
                 hpBar.gameObject.SetActive(false);
                 Destroy(hpBar.gameObject, 1f);
@@ -246,24 +245,41 @@ public class Unit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        EnemyManager temp = collision.GetComponent<EnemyManager>();
+        
         //Debug.Log(collision.name);
         if (collision.tag == "enemy")
         {
+            EnemyManager temp = collision.GetComponent<EnemyManager>();
             if (state == UnitState.idle && target == null && temp.GetEnemyHp() > 0)
             {
+                
+                //if (temp.GetComponent<EnemyManager>().state == EnemyManager.EnemyState.move)
+                
+                target = temp.transform;
                 //Debug.Log("attacked");
                 state = UnitState.attack;
-                target = temp.transform;
                 //temp.SetTarget(transform);
                 targetHp = temp.GetEnemyHp();
-
+                
+                
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        /*
+        if (collision.tag == "enemy" && target != null)
+        {
+            if(target.gameObject == collision.gameObject)
+                target = null;
+        }
+        */
     }
 
     public void ChangeUnitHp(int n) { hp += n; }

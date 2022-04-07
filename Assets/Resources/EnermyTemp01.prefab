@@ -138,8 +138,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c0e46e65e4bed240bbbf622716b6402, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.125
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -147,7 +147,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.9168587
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -345,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyDamageObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275302816216038050, guid: f31198a294c348544bc3801202dbe581,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f31198a294c348544bc3801202dbe581, type: 3}

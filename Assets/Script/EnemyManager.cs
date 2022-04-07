@@ -196,6 +196,10 @@ public class EnemyManager : MonoBehaviour
                 else
                 {
                     //Debug.Log("not target");
+                    state = EnemyState.move;
+                    gameObject.GetComponent<EnemyMovement>().isMove = true;
+                    Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
+                    movement.MoveTo(direction);
                 }
                 
                     
@@ -204,13 +208,15 @@ public class EnemyManager : MonoBehaviour
                 Color color = sr.color;
                 color.a = 0;
                 sr.color = color;
-                Destroy(gameObject, 1f);
-                hpbar.gameObject.SetActive(false);
-                Destroy(hpbar.gameObject, 1f);
+
+                transform.Find("Shadow").gameObject.SetActive(false);
+
                 if (getDeathCost)
                 {
                     deathSound.Play();
-                    Instantiate(deathAnime, gameObject.transform);
+                    GameObject temp = Instantiate(deathAnime, GameObject.Find("Enemy").transform);
+                    temp.transform.position = transform.position;
+                    Destroy(temp, 1f);
                     GameObject StageUI = GameObject.Find("StateUI");
                     StageUI.GetComponent<StageUIManager>().ChangeCost(+15);
                     getDeathCost = false;
@@ -222,7 +228,12 @@ public class EnemyManager : MonoBehaviour
                     GameObject waveManager = GameObject.Find("WaveManager");
                     waveManager.GetComponent<StageWaveManager>().enemy_count--;
                 }
+
                 
+                hpbar.gameObject.SetActive(false);
+                Destroy(hpbar.gameObject, 1f);
+                Destroy(gameObject, 1f);
+
                 break;
         }
     }

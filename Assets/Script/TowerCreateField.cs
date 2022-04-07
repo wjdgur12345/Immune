@@ -159,7 +159,7 @@ public class TowerCreateField : MonoBehaviour
             }
         }
         tower.GetComponent<Tower>().upgradeTower(upgrade_tech1, upgrade_tech2, upgrade_Level);
-        Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
+        //Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
         OnToggle(false);
     }
 
@@ -181,7 +181,7 @@ public class TowerCreateField : MonoBehaviour
             }
         }
         tower.GetComponent<Tower>().upgradeTower(upgrade_tech1, upgrade_tech2, upgrade_Level);
-        Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
+        //Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
         OnToggle(false);
     }
 
@@ -203,7 +203,7 @@ public class TowerCreateField : MonoBehaviour
             }
         }
         tower.GetComponent<Tower>().upgradeTower(upgrade_tech1, upgrade_tech2, upgrade_Level);
-        Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
+        //Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
         OnToggle(false);
     }
 

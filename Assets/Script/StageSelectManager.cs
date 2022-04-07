@@ -10,7 +10,7 @@ public class StageSelectManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void GotoStage(int n = 1)
+    public void GotoStage1(int n = 1)
     {
         string str = "Stage1-" + n.ToString();
         Debug.Log(str);

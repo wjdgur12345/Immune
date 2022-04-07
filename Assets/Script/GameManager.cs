@@ -158,7 +158,10 @@ public class GameManager : MonoBehaviour
         {
             //컨티뉴
             game_state = GameState.play;
-            Time.timeScale = 1;
+            if (wave_manager.GetComponent<StageWaveManager>().field_state == StageWaveManager.FieldState.play)
+                Time.timeScale = 1;
+            else
+                Time.timeScale = 3;
             gray_image.transform.position = new Vector3(100, 0, -10);
             pauseButton.transform.position = new Vector3(8, 4);
             home_button.transform.position = new Vector3(100, 0);
