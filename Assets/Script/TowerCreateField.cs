@@ -23,6 +23,20 @@ public class TowerCreateField : MonoBehaviour
 
     public Button sellButton;
 
+    //버튼 스프라이트
+    public Sprite sell_button_spr;
+    public Sprite[] create_button_spr = new Sprite[3];
+    public Sprite[] tower1_spr = new Sprite[15];
+    public Sprite[] tower2_spr = new Sprite[10];
+    public Sprite[] tower3_spr = new Sprite[10];
+    //image index
+    /* 0 : default
+     * 1 : 1-1
+     * 2 : 1-2
+     * 3 : 2-1
+     * 4 : 2-2
+     */
+
     [SerializeField]
     private int upgrade_tech1 = 0;
     [SerializeField]
@@ -39,6 +53,14 @@ public class TowerCreateField : MonoBehaviour
         isToggle = false;
         isTowerCreate = false;
         tower = null;
+
+        sellButton.transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = sell_button_spr;
+
+        //타워생성버튼 이미지 삽입하기
+        for (int i=0; i<3; i++)
+        {
+            TowerCreateButton[i].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = create_button_spr[i];
+        }
     }
 
     private void Update()
@@ -110,7 +132,7 @@ public class TowerCreateField : MonoBehaviour
         }
         
     }
-
+    /*
     public void CreateTower()
     {
         spawner.GetComponent<TowerSpawner>().SetUnitWayPoint(spawnPointX, spawnPointY);
@@ -122,7 +144,7 @@ public class TowerCreateField : MonoBehaviour
         }
         //Destroy(this);
     }
-
+    */
     public void CreateTower(int index)
     {
         spawner.GetComponent<TowerSpawner>().SetUnitWayPoint(spawnPointX, spawnPointY);
@@ -132,10 +154,11 @@ public class TowerCreateField : MonoBehaviour
             TowerCreateButton[i].GetComponent<TowerButtonUI>().isInteractable(false, false);
         }
 
-
+        OnToggle(false);
         isTowerCreate = true;
         isToggle = false;
         upgrade_Level = 0;
+        ChangeButtonSprite();
     }
 
     /// <summary>
@@ -161,6 +184,7 @@ public class TowerCreateField : MonoBehaviour
         tower.GetComponent<Tower>().upgradeTower(upgrade_tech1, upgrade_tech2, upgrade_Level);
         //Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
         OnToggle(false);
+        ChangeButtonSprite();
     }
 
     public void upgradeTower2()
@@ -183,6 +207,7 @@ public class TowerCreateField : MonoBehaviour
         tower.GetComponent<Tower>().upgradeTower(upgrade_tech1, upgrade_tech2, upgrade_Level);
         //Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
         OnToggle(false);
+        ChangeButtonSprite();
     }
 
     public void upgradeTower3()
@@ -205,6 +230,7 @@ public class TowerCreateField : MonoBehaviour
         tower.GetComponent<Tower>().upgradeTower(upgrade_tech1, upgrade_tech2, upgrade_Level);
         //Debug.Log("tech 1 : " + upgrade_tech1 + ", tech2 : " + upgrade_tech2 + "\nLevel : " + upgrade_Level);
         OnToggle(false);
+        ChangeButtonSprite();
     }
 
     public void SellTower()
@@ -221,6 +247,72 @@ public class TowerCreateField : MonoBehaviour
             GameObject StageUI = GameObject.Find("StateUI");
             StageUI.GetComponent<StageUIManager>().ChangeCost(upgrade_cost);
             upgrade_cost = 0;
+        }
+    }
+
+    public void ChangeButtonSprite()
+    {
+        if(tower != null)
+        {
+            //타워 인덱스 확인
+            switch (tower.GetComponent<Tower>().towerIndex)
+            {
+                case 0:
+                    //기본타워일 경우
+                    if(upgrade_tech1 == 0)
+                    {
+                        upgradeButton[0].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower1_spr[0];
+                        upgradeButton[1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower1_spr[5];
+                        upgradeButton[2].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower1_spr[10];
+                    }
+                    else if(upgrade_tech2 == 0)//유닛만 선택 되었을 경우
+                    {
+                        upgradeButton[0].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower1_spr[((upgrade_tech1 - 1) * 5) + 1];
+                        upgradeButton[1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower1_spr[((upgrade_tech1 - 1) * 5) + 3];
+                    }
+                    else//레벨만 남았을 경우
+                    {
+                        upgradeButton[0].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite 
+                            = tower1_spr[((upgrade_tech1 - 1) * 5) + (upgrade_tech2 * 2)];
+                    }
+                    break;
+                case 1:
+                    //기본타워일 경우
+                    if (upgrade_tech1 == 0)
+                    {
+                        upgradeButton[0].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower2_spr[0];
+                        upgradeButton[1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower2_spr[5];
+                    }
+                    else if (upgrade_tech2 == 0)//유닛만 선택 되었을 경우
+                    {
+                        upgradeButton[0].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower2_spr[((upgrade_tech1 - 1) * 5) + 1];
+                        upgradeButton[1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower2_spr[((upgrade_tech1 - 1) * 5) + 3];
+                    }
+                    else//레벨만 남았을 경우
+                    {
+                        upgradeButton[upgrade_tech2 - 1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite
+                            = tower2_spr[((upgrade_tech1 - 1) * 5) + (upgrade_tech2 * 2)];
+                    }
+                    break;
+                case 2:
+                    //기본타워일 경우
+                    if (upgrade_tech1 == 0)
+                    {
+                        upgradeButton[0].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower3_spr[0];
+                        upgradeButton[1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower3_spr[5];
+                    }
+                    else if (upgrade_tech2 == 0)//유닛만 선택 되었을 경우
+                    {
+                        upgradeButton[0].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower3_spr[((upgrade_tech1 - 1) * 5) + 1];
+                        upgradeButton[1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite = tower3_spr[((upgrade_tech1 - 1) * 5) + 3];
+                    }
+                    else//레벨만 남았을 경우
+                    {
+                        upgradeButton[upgrade_tech2 - 1].transform.Find("ImageMask").Find("image").GetComponent<Image>().sprite
+                            = tower3_spr[((upgrade_tech1 - 1) * 5) + (upgrade_tech2 * 2)];
+                    }
+                    break;
+            }
         }
     }
 

@@ -11,13 +11,47 @@ public class TowerButtonUI : MonoBehaviour
     private Text costText;
     [SerializeField]
     private Image[] changeImage;
+    private Image button_image;
+
+
     void Start()
     {
+        button_image = transform.Find("ImageMask").Find("image").GetComponent<Image>();
+
         image = GetComponent<Image>();
         color = image.color;
         color.a = 0f;
         image.color = color;
         GetComponent<Button>().interactable = false;
+    }
+
+    private void Update()
+    {
+        switch (button_image.GetComponent<Image>().sprite.name)
+        {
+            case "호중구1-1":
+            case "호중구1-2":
+            case "호중구2-1":
+            case "호중구2-2":
+            case "비만1-1":
+            case "비만1-2":
+            case "비만2-1":
+            case "비만2-2":
+            case "수지상1-1":
+            case "수지상1-2":
+            case "수지상2-1":
+            case "수지상2-2":
+            case "B1-1"://스프라이트 잘못 넣어서 T세포랑 B세포 바뀜
+            case "B1-2":
+            case "B2-1":
+            case "B2-2":
+                transform.Find("LockImage").gameObject.SetActive(true);
+                break;
+            default:
+                transform.Find("LockImage").gameObject.SetActive(false);
+                break;
+        }
+
     }
 
     public void ChangeColorA(bool on)

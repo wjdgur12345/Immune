@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 15
+  damage: 40
   attack_count: 3
   target: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}

@@ -109,8 +109,8 @@ MonoBehaviour:
   hpBarImage: {fileID: 6477271299968233976, guid: b87f03ec4c3a4c24e8241e63765665be,
     type: 3}
   hp: 0
-  maxHp: 500
-  damage: 40
+  maxHp: 125
+  damage: 18
   deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
   targetHp: 0
   death_count: 0

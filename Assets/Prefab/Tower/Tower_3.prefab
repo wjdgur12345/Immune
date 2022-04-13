@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4434405656256333710}
   m_Layer: 0
   m_Name: Tower_3
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerPrice: 0
-  towerIndex: 1
+  towerIndex: 2
   tower_upgrade_tech1: 0
   tower_upgrade_tech2: 0
   tower_upgrade_level: 0

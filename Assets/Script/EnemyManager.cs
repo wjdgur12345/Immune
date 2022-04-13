@@ -67,7 +67,7 @@ public class EnemyManager : MonoBehaviour
         StartCoroutine("OnMove");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         
         hpbar.transform.position = new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z);

@@ -220,6 +220,19 @@ public class Tower : MonoBehaviour
         tower_upgrade_tech2 = tech2;
         tower_upgrade_level = level;
 
+        if(towerIndex == 2 && tower_upgrade_tech2 == 1 && tower_upgrade_tech2 == 1)
+        {
+            if(tower_upgrade_level == 0)
+            {
+                unitLimit = 4;
+            }
+            else
+            {
+                unitLimit = 5;
+            }
+            correntUnits = new GameObject[unitLimit];
+        }
+
  /*
   * 테크 1 : 유닛 선택(호중구, 호산구 등등)
   * 테크 2 : 세부 업그레이드(공격력증가, 공격속도 강화 등등)

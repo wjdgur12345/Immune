@@ -45,8 +45,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -84,6 +87,10 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -1258,7 +1265,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 3d4a74870cda5563b0bec1935edb0480
+      Hash: 623927fa29bfea2bdd6000f6729c5b03
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TowerCreateField
@@ -1306,7 +1313,7 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: 61f767a163c6aaa1b7397539f64cc5df
+      Hash: 0fdd87fb683845d2c289039bfbf49f7e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StageWaveManager
@@ -1744,7 +1751,7 @@ ScriptsOnlyBuild:
     className: VertexShakeB
   - hash:
       serializedVersion: 2
-      Hash: e64237c5c03672a08b248cca9aeef323
+      Hash: 5837aa8de960c4aa81e5b82170a2fe73
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager

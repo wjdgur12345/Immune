@@ -234,7 +234,8 @@ public class Unit : MonoBehaviour
                 color.a = 0;
                 sr.color = color;
 
-                transform.Find("Shadow").gameObject.SetActive(false);
+                if(transform.Find("Shadow") != null)
+                    transform.Find("Shadow").gameObject.SetActive(false);
                 Destroy(gameObject, 1f);
                 hpBar.gameObject.SetActive(false);
                 Destroy(hpBar.gameObject, 1f);

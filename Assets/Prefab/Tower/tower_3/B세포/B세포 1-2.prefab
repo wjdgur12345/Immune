@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2991154214876845032, guid: f1667686c5e0b40489596f2ea40b1b4b,
+  m_Sprite: {fileID: 4653932814348791077, guid: b2b32bd7c06fd354bb96adaad761cbf7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
   hpBarImage: {fileID: 6477271299968233976, guid: b87f03ec4c3a4c24e8241e63765665be,
     type: 3}
   hp: 0
-  maxHp: 500
-  damage: 8
+  maxHp: 60
+  damage: 11
   deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
   targetHp: 0
   death_count: 0
@@ -162,7 +162,7 @@ Animator:
   m_GameObject: {fileID: 2339195689854754339}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec43ea3ba2c43fd4eb15dd9ff4a680d3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 42596771689276146978b3e943517cff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

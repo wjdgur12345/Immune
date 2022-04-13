@@ -57,7 +57,7 @@ public class TowerSpawner : MonoBehaviour
 
     //public void SetUpgradeButton(Button button) { upgradeButton = button; }
 
-    public Transform CreateTower(float x, float y, int index = 0)
+    public Transform CreateTower(float x, float y, int index)
     {
         createTowerIndex = index;
 
@@ -76,6 +76,10 @@ public class TowerSpawner : MonoBehaviour
                 tower.GetComponent<Tower>().default_cost = 350;
                 break;
             case 1:
+                costManager.GetComponent<StageUIManager>().ChangeCost(-400);
+                tower.GetComponent<Tower>().default_cost = 400;
+                break;
+            case 2:
                 costManager.GetComponent<StageUIManager>().ChangeCost(-400);
                 tower.GetComponent<Tower>().default_cost = 400;
                 break;

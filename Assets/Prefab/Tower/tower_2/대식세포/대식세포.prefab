@@ -104,12 +104,12 @@ MonoBehaviour:
   dispersionX: 0
   dispersionY: 0
   target: {fileID: 0}
-  attackDelayLimit: 0.5
+  attackDelayLimit: 1
   hpBarImage: {fileID: 6477271299968233976, guid: b87f03ec4c3a4c24e8241e63765665be,
     type: 3}
   hp: 0
-  maxHp: 500
-  damage: 8
+  maxHp: 70
+  damage: 10
   deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
   targetHp: 0
   death_count: 0
