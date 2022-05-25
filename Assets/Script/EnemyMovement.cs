@@ -12,6 +12,15 @@ public class EnemyMovement : MonoBehaviour
 
     public float MoveSpeed => moveSpeed;
 
+    private void Start()
+    {
+        if(GameObject.Find("GameManager") != null)
+        {
+            if (GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_debuff == GameManager.DendriticCellDebuffState.active)
+                moveSpeed = moveSpeed - moveSpeed / 10;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

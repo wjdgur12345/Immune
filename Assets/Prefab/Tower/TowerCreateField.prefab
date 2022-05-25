@@ -161,16 +161,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d213e185a0bbf3c49b88bed0d92ff446, type: 3}
   - {fileID: 21300000, guid: ad0e0649434806749a0a91fbfc1f2276, type: 3}
   tower3_spr:
-  - {fileID: 21300000, guid: 00563061741094448bb0b0bbc7d13929, type: 3}
-  - {fileID: 21300000, guid: 7183612922c148041bd68095cbe2bae4, type: 3}
-  - {fileID: 21300000, guid: 437c4faa074ea4943af3dc7c3f168880, type: 3}
-  - {fileID: 21300000, guid: f4bd46ff4adf4994cb3368db77c81057, type: 3}
-  - {fileID: 21300000, guid: 02e180f28235ff644a45fd0e902131f2, type: 3}
   - {fileID: 21300000, guid: 7af57b1997e87124cb9409bea999ad53, type: 3}
   - {fileID: 21300000, guid: 8b3d96c608f90c74c8fdad544fa532d2, type: 3}
   - {fileID: 21300000, guid: b552c18d6e0e0484aa89d153b4f94d1b, type: 3}
   - {fileID: 21300000, guid: 06d50ee34ab129143a74c9f09ff55a5c, type: 3}
   - {fileID: 21300000, guid: e66c3d4676265cb4991621491b2e1ba6, type: 3}
+  - {fileID: 21300000, guid: 00563061741094448bb0b0bbc7d13929, type: 3}
+  - {fileID: 21300000, guid: 7183612922c148041bd68095cbe2bae4, type: 3}
+  - {fileID: 21300000, guid: 437c4faa074ea4943af3dc7c3f168880, type: 3}
+  - {fileID: 21300000, guid: f4bd46ff4adf4994cb3368db77c81057, type: 3}
+  - {fileID: 21300000, guid: 02e180f28235ff644a45fd0e902131f2, type: 3}
   upgrade_tech1: 0
   upgrade_tech2: 0
   upgrade_Level: 0

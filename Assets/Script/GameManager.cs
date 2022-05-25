@@ -28,13 +28,41 @@ public class GameManager : MonoBehaviour
 
     public GameObject state_ui;
 
+    //버프 및 디버프 관리
+    public DendriticCellBuffState dendritic_cell_buff = DendriticCellBuffState.none;
+    public DendriticCellDebuffState dendritic_cell_debuff = DendriticCellDebuffState.none;
+    public TCellBuffState t_cell_buff = TCellBuffState.none;
 
+
+    //게임 상태 관리
     public enum GameState
     {
         play,
         pause,
         clear,
         gameover
+    }
+
+    //수지상세포의 아군 버프 상태
+    public enum DendriticCellBuffState
+    {
+        none,
+        active
+    }
+
+    //수지상세포의 적군 디버프 상태
+    public enum DendriticCellDebuffState
+    {
+        none,
+        active
+    }
+
+    //T세포의 아군 버프 상태, 수지상과 차별점을 위해 중첩 가능하도록
+    public enum TCellBuffState
+    {
+        none,
+        active_level_1,
+        active_level_2
     }
 
     private void Start()
@@ -89,13 +117,19 @@ public class GameManager : MonoBehaviour
             wave_manager.GetComponent<StageWaveManager>().field_state != StageWaveManager.FieldState.play)
         {
             Time.timeScale = 0f;
-            if (game_state != GameState.clear)
+            if (game_state != GameState.clear && GameObject.Find("Play_Result_Victory_Common") == null)
             {
-                
+
                 //Image temp = Instantiate(game_clear_image);
                 //temp.transform.SetParent(ui_canvas.transform);
-                GameObject temp = Instantiate(game_clear_object, ui_canvas.transform);
+                GameObject temp;
+
+                
+                temp = Instantiate(game_clear_object, ui_canvas.transform);
+                
+
                 temp.transform.GetComponent<RectTransform>().localScale = new Vector3(0.01f, 0.01f);
+                temp.transform.position = new Vector3(0, 0);
                 for (int i = 0; i < ui_canvas.transform.parent.childCount; i++)
                 {
                     if (ui_canvas.transform.parent.GetChild(i).gameObject.name != "GameControlUI")

@@ -50,6 +50,7 @@ MonoBehaviour:
   enemy_count: 0
   enemy_spawner: {fileID: 0}
   wave_button: {fileID: 0}
+  start_button_loaging_bar: {fileID: 0}
 --- !u!1 &6133507807792840809
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,12 +170,13 @@ MonoBehaviour:
   home_button: {fileID: 0}
   restart_button: {fileID: 0}
   continue_button: {fileID: 0}
-  game_over_image: {fileID: 4734058214228120026, guid: b9682e4b980620847b9f0f39225b3ee3,
+  game_over_object: {fileID: 9120086779493816728, guid: 5d211ab3b8b0ed94f9b844da09f3e2d0,
     type: 3}
-  game_clear_image: {fileID: 523758071788500684, guid: a7dc7fef000ce144a8de4879ebbd323e,
+  game_clear_object: {fileID: 3233295291179992775, guid: 3d1eadafddb87624d9ea3d64cd2a62b9,
     type: 3}
   ui_canvas: {fileID: 0}
   game_state: 0
+  state_ui: {fileID: 0}
 --- !u!1 &6133507808857535563
 GameObject:
   m_ObjectHideFlags: 0

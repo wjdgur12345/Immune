@@ -41,7 +41,7 @@ public class Unit : MonoBehaviour
     private bool isDeath = true;
 
     //자동회복
-    private float regen_hp = 15.0f;
+    private float regen_hp = 2.0f;
     private float regen_time = 0.0f;
     private float regen_time_limit = 0.5f;
 
@@ -51,7 +51,10 @@ public class Unit : MonoBehaviour
     public int death_count_limit = 5;
     public GameObject poison_smoke;
     //////////
-    
+
+    //호중구 자폭타이머
+    private float self_destruct_timer_limit;
+    private float self_destruct_timer = 0f;
 
     public enum UnitState
     {
@@ -76,8 +79,42 @@ public class Unit : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         anime = GetComponent<Animator>();
-        
 
+        //버프유닛생성시
+        //t세포
+        if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 1)
+            GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.active_level_1;
+        else if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
+            GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.active_level_2;
+        //수지상세포
+        if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
+            GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_buff = GameManager.DendriticCellBuffState.active;
+        if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 2 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
+            GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_debuff = GameManager.DendriticCellDebuffState.active;
+
+        //t세포 버프에 따라 테미지가 각각 10%, 20% 증가
+        if (GameObject.Find("GameManager") != null)
+        {
+            if (GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff == GameManager.TCellBuffState.active_level_1)
+                damage += damage / 10;
+            else if (GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff == GameManager.TCellBuffState.active_level_2)
+                damage += damage / 5;
+
+        }
+
+        
         SetDispersion();
         Create();
         
@@ -87,6 +124,7 @@ public class Unit : MonoBehaviour
     {
         if(state == UnitState.idle || state == UnitState.move)
         {
+            //자동 회복
             if(regen_time >= regen_time_limit)
             {
                 regen_time = 0;
@@ -106,6 +144,33 @@ public class Unit : MonoBehaviour
         CheckState();
         if (hp <= 0)
             state = UnitState.death;
+
+        //호중구 2-1, 2-2일때
+        if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 0 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
+                        transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 )
+        {
+            if (transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 0)
+            {
+                //2-1일때
+                self_destruct_timer_limit = 5.0f;
+            }
+            else
+            {
+                //2-2일때
+                self_destruct_timer_limit = 20.0f;
+            }
+
+            if(GameObject.Find("WaveManager") != null)
+            {
+                if(GameObject.Find("WaveManager").GetComponent<StageWaveManager>().field_state == StageWaveManager.FieldState.play)
+                    self_destruct_timer += Time.deltaTime;
+            }
+
+            if (self_destruct_timer > self_destruct_timer_limit)
+                state = UnitState.death;
+            
+        }
     }
 
     public void SetWayPoint(float x, float y)
@@ -172,7 +237,19 @@ public class Unit : MonoBehaviour
                     state = UnitState.idle;
                 break;
             case UnitState.attack:
-                attackDelay += Time.deltaTime;
+                //버프상태에 따른 공격속도
+                //버프가 아니면 시간에 따라, 버프상태이면 10%만큼 더 빨리 공격하도록
+                if(GameObject.Find("GameManager") != null)
+                {
+                    if(GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_buff == GameManager.DendriticCellBuffState.active)
+                        attackDelay += (Time.deltaTime + Time.deltaTime / 10);
+                    else
+                        attackDelay += Time.deltaTime;
+                }
+                else
+                    attackDelay += Time.deltaTime;
+
+
                 if(targetHp > 0)
                 {
                     if(attackDelay >= attackDelayLimit)
@@ -225,6 +302,31 @@ public class Unit : MonoBehaviour
                         temp.transform.SetParent(GameObject.Find("Units").transform);
                     }
                     ////////
+                    ///
+
+                    //버프유닛제거시
+                    //t세포
+                    if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 2 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 1)
+                        GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.none;
+                    else if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 2 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
+                        GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.none;
+                    //수지상세포
+                    if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 1 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 2 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 2 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
+                        GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_buff = GameManager.DendriticCellBuffState.none;
+                    if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 1 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 2 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 1 &&
+                                    transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
+                        GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_debuff = GameManager.DendriticCellDebuffState.none;
                 }
 
 

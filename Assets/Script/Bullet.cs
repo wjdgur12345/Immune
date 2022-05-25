@@ -11,10 +11,12 @@ public class Bullet : MonoBehaviour
     public Transform target = null;
     public Vector3 moveDirection = Vector3.zero;
 
+    private float destroy_count = 0f;
+
     private void Start()
     {
         transform.position = new Vector3(transform.position.x,transform.position.y, target.position.z);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-moveDirection), 1f);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-moveDirection), 1f);
 
     }
 
@@ -33,5 +35,9 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         transform.position += moveDirection * speed * Time.deltaTime;
+
+        destroy_count += Time.deltaTime;
+        if (destroy_count >= 0.8f)
+            Destroy(gameObject);
     }
 }

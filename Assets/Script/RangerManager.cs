@@ -8,6 +8,7 @@ public class RangerManager : MonoBehaviour
     public State state = State.idle;
 
     public float attack_delay = 1f;
+    [SerializeField]
     private float attack_time = 0;
 
     public Transform target = null;

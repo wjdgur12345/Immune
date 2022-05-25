@@ -40,16 +40,12 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -120,8 +116,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11848}
     - Class: 114
       Script: {instanceID: 11870}
-    - Class: 114
-      Script: {instanceID: 12036}
     - Class: 114
       Script: {instanceID: 12664}
     - Class: 114
@@ -825,6 +819,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11270}
     - Class: 114
       Script: {instanceID: 11274}
     - Class: 114
@@ -1937,7 +1933,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 7ec319f913a60d629314ac9e759ce1b2
+      Hash: cc3882e6996caeb31c29ce9171da7afc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RangerManager
@@ -1952,4 +1948,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Stage1-3.unity
   - Assets/Scenes/Stage1-4.unity
   - Assets/Scenes/Stage1 Select.unity
-  playerPath: "C:/Users/wjdgu/Downloads/\uC0C8 \uD3F4\uB354/Immune.exe"
+  playerPath: C:/Users/wjdgu/Desktop/immune/Immune.exe

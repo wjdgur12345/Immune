@@ -98,6 +98,7 @@
     <Compile Include="Assets\Script\StageSelectManager.cs" />
     <Compile Include="Assets\Script\StageUIManager.cs" />
     <Compile Include="Assets\Script\StageWaveManager.cs" />
+    <Compile Include="Assets\Script\TCellUnit.cs" />
     <Compile Include="Assets\Script\TempObject.cs" />
     <Compile Include="Assets\Script\Tower.cs" />
     <Compile Include="Assets\Script\TowerButtonUI.cs" />
