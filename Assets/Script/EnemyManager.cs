@@ -29,6 +29,7 @@ public class EnemyManager : MonoBehaviour
     private GameObject deathAnime;
     private AudioSource deathSound;
     public AudioClip deathSoundClip;
+    public GameObject attack_effect;
 
     //temp
     private SpriteRenderer sr;
@@ -166,6 +167,8 @@ public class EnemyManager : MonoBehaviour
                 break;
             case EnemyState.attack:
 
+                
+
                 if (target != null)
                 {
                     gameObject.GetComponent<EnemyMovement>().isMove = false;
@@ -177,6 +180,13 @@ public class EnemyManager : MonoBehaviour
 
                         if (attackDelay >= attackDelayLimit)
                         {
+                            attack_effect.transform.position = new Vector3(
+                                transform.position.x - ((transform.position.x - target.position.x)/2) ,
+                                transform.position.y - ((transform.position.y - target.position.y)/2) ,
+                                transform.position.z - 1
+                                );
+                            Destroy( Instantiate(attack_effect) , 1.5f);
+
                             target.GetComponent<Unit>().ChangeUnitHp(-damage);
                             attackDelay = 0;
                         }

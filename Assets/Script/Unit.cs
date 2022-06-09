@@ -81,6 +81,7 @@ public class Unit : MonoBehaviour
         anime = GetComponent<Animator>();
 
         //버프유닛생성시
+        /*
         //t세포
         if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 2 &&
                         transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
@@ -103,7 +104,7 @@ public class Unit : MonoBehaviour
                         transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 1 &&
                         transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
             GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_debuff = GameManager.DendriticCellDebuffState.active;
-
+        */
         //t세포 버프에 따라 테미지가 각각 10%, 20% 증가
         if (GameObject.Find("GameManager") != null)
         {
@@ -212,8 +213,8 @@ public class Unit : MonoBehaviour
         dispersionX = 0;
         dispersionY = 0;
 
-        dispersionX += Random.Range(-0.2f, 0.2f);
-        dispersionY += Random.Range(-0.2f, 0.2f);
+        dispersionX += Random.Range(-0.5f, 0.5f);
+        dispersionY += Random.Range(-0.5f, 0.5f);
     }
 
     public void CheckState()
@@ -305,6 +306,7 @@ public class Unit : MonoBehaviour
                     ///
 
                     //버프유닛제거시
+                    /*
                     //t세포
                     if (transform.parent.gameObject.GetComponent<Tower>().towerIndex == 2 &&
                                     transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech1 == 1 &&
@@ -327,6 +329,7 @@ public class Unit : MonoBehaviour
                                     transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_tech2 == 1 &&
                                     transform.parent.gameObject.GetComponent<Tower>().tower_upgrade_level == 2)
                         GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_debuff = GameManager.DendriticCellDebuffState.none;
+                    */
                 }
 
 

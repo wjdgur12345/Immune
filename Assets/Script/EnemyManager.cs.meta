@@ -3,7 +3,12 @@ guid: f71240e34af772b4d8b4214dbb456f70
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hpBarImage: {instanceID: 0}
+  - target: {instanceID: 0}
+  - deathAnime: {instanceID: 0}
+  - deathSoundClip: {instanceID: 0}
+  - attack_effect: {fileID: 153256, guid: e9f18dfc067fd614f97e5a21de0aaeaf, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

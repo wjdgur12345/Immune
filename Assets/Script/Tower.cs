@@ -220,7 +220,34 @@ public class Tower : MonoBehaviour
         tower_upgrade_tech2 = tech2;
         tower_upgrade_level = level;
 
-        if(towerIndex == 2 && tower_upgrade_tech2 == 1 && tower_upgrade_tech2 == 1)
+        //Debug.Log(towerIndex + " , " + tower_upgrade_tech1 + ", " + tower_upgrade_tech2 + ", " + tower_upgrade_level);
+
+        //버프유닛생성시
+        //t세포
+        if (towerIndex == 2 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 2 &&
+                        tower_upgrade_level == 0)
+            GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.active_level_1;
+        else if (towerIndex == 2 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 2 &&
+                        tower_upgrade_level == 1)
+            GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.active_level_2;
+        //수지상세포
+        if (towerIndex == 1 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 2 &&
+                        tower_upgrade_level == 1)
+            GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_buff = GameManager.DendriticCellBuffState.active;
+        if (towerIndex == 1 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 1 &&
+                        tower_upgrade_level == 1)
+            GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_debuff = GameManager.DendriticCellDebuffState.active;
+        
+
+        if (towerIndex == 2 && tower_upgrade_tech2 == 1 && tower_upgrade_tech2 == 1)
         {
             if(tower_upgrade_level == 0)
             {
@@ -304,7 +331,31 @@ public class Tower : MonoBehaviour
             //Destroy(transform.GetChild(i));
             transform.GetChild(i).GetComponent<Unit>().state = Unit.UnitState.death;
         }
-            
+
+        //타워 판매시 버프 삭제
+        //T세포
+        if (towerIndex == 2 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 2 &&
+                        tower_upgrade_level == 0)
+            GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.none;
+        else if (towerIndex == 2 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 2 &&
+                        tower_upgrade_level == 1)
+            GameObject.Find("GameManager").GetComponent<GameManager>().t_cell_buff = GameManager.TCellBuffState.none;
+        //수지상세포
+        if (towerIndex == 1 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 2 &&
+                        tower_upgrade_level == 1)
+            GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_buff = GameManager.DendriticCellBuffState.none;
+        if (towerIndex == 1 &&
+                        tower_upgrade_tech1 == 2 &&
+                        tower_upgrade_tech2 == 1 &&
+                        tower_upgrade_level == 1)
+            GameObject.Find("GameManager").GetComponent<GameManager>().dendritic_cell_debuff = GameManager.DendriticCellDebuffState.none;
+
         Destroy(gameObject, 1f);
     }
 

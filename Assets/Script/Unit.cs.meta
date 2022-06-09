@@ -3,7 +3,12 @@ guid: 4aa753d579b20154e87f95b03cb48afa
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - target: {instanceID: 0}
+  - hpBarImage: {instanceID: 0}
+  - deathAnime: {fileID: 6724881285241212198, guid: b7a5f39af40702e4c8ed14284e627d71,
+      type: 3}
+  - poison_smoke: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

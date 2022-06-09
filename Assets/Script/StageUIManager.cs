@@ -10,9 +10,9 @@ public class StageUIManager : MonoBehaviour
     public Text cost;
     private int stageCost;
 
-    public GameObject lifeImage;
+    //public GameObject lifeImage;
     //public Text lifeText;
-    public TextMeshProUGUI lifeText;
+    public Text lifeText;
     private int life;
 
     void Start()
@@ -28,7 +28,7 @@ public class StageUIManager : MonoBehaviour
         cost.text = "" + stageCost;
         lifeText.text = "" + life;
 
-        lifeImage.GetComponent<Slider>().value = (float)life / (float)20;
+        //lifeImage.GetComponent<Slider>().value = (float)life / (float)20;
 
     }
 

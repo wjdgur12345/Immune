@@ -110,8 +110,10 @@ MonoBehaviour:
   target: {fileID: 0}
   damage: 5
   attackDelayLimit: 0.8
-  deathAnime: {fileID: 193062, guid: 01949c12a89de284792dc4b7b7128404, type: 3}
+  deathAnime: {fileID: 2786986117665758884, guid: f703749538d562e4889dffb7b90698d9,
+    type: 3}
   deathSoundClip: {fileID: 8300000, guid: 5c0e46e65e4bed240bbbf622716b6402, type: 3}
+  attack_effect: {fileID: 0}
 --- !u!114 &320679975990653952
 MonoBehaviour:
   m_ObjectHideFlags: 0

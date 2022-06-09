@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] createTowerFields;
     public GameObject wave_manager;
-    public TextMeshProUGUI life_text;
+    public Text life_text;
 
     public Button pauseButton;
     public Image gray_image;

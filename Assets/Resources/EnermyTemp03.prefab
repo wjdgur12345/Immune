@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320679975990653953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.06, y: 6, z: 0}
+  m_LocalPosition: {x: 9.67, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3203342983552404953}
@@ -109,10 +109,12 @@ MonoBehaviour:
   hpBarImage: {fileID: 8977286967656459329, guid: 6d0f8116189cb6047a8d43c5ba9afcf3,
     type: 3}
   target: {fileID: 0}
-  damage: 5
+  damage: 7
   attackDelayLimit: 0.8
-  deathAnime: {fileID: 193062, guid: 01949c12a89de284792dc4b7b7128404, type: 3}
+  deathAnime: {fileID: 2786986117665758884, guid: f703749538d562e4889dffb7b90698d9,
+    type: 3}
   deathSoundClip: {fileID: 8300000, guid: 5c0e46e65e4bed240bbbf622716b6402, type: 3}
+  attack_effect: {fileID: 153256, guid: e9f18dfc067fd614f97e5a21de0aaeaf, type: 3}
 --- !u!114 &320679975990653952
 MonoBehaviour:
   m_ObjectHideFlags: 0
