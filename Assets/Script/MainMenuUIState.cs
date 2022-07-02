@@ -15,7 +15,7 @@ public class MainMenuUIState : MonoBehaviour
     }
     void Start()
     {
-        StateLoad();
+        //StateLoad();
     }
 
     public void StateLoad()

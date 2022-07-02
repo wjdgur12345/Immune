@@ -109,7 +109,8 @@ MonoBehaviour:
   hp: 0
   maxHp: 500
   damage: 8
-  deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+  deathAnime: {fileID: 6724881285241212198, guid: b7a5f39af40702e4c8ed14284e627d71,
+    type: 3}
   targetHp: 0
   death_count: 0
   death_count_limit: 5

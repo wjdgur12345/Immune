@@ -101,6 +101,9 @@ public class EnemyManager : MonoBehaviour
         {
             //transform.Rotate(Vector3.forward * 10);
 
+            if (state != EnemyState.move)
+                yield return null;
+
             if (Vector3.Distance(transform.position, wayPoints[currentIndex].position) < 0.02f * movement.MoveSpeed)
             {
                 NextMoveTo();
@@ -135,7 +138,7 @@ public class EnemyManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        hp -= 10;
+        hp -= 100;
     }
 
 
@@ -199,6 +202,7 @@ public class EnemyManager : MonoBehaviour
                         gameObject.GetComponent<EnemyMovement>().isMove = true;
                         Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
                         movement.MoveTo(direction);
+                        StartCoroutine("OnMove");
                     }
 
 

@@ -45,7 +45,7 @@ public class TowerButtonUI : MonoBehaviour
             case "B1-2":
             case "B2-1":
             case "B2-2":
-                transform.Find("LockImage").gameObject.SetActive(true);
+                transform.Find("LockImage").gameObject.SetActive(false);
                 break;
             default:
                 transform.Find("LockImage").gameObject.SetActive(false);

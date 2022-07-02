@@ -111,7 +111,8 @@ MonoBehaviour:
   hp: 0
   maxHp: 45
   damage: 0
-  deathAnime: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+  deathAnime: {fileID: 6724881285241212198, guid: b7a5f39af40702e4c8ed14284e627d71,
+    type: 3}
   targetHp: 0
   death_count: 0
   death_count_limit: 5
@@ -257,6 +258,7 @@ MonoBehaviour:
   bullet: {fileID: 5998581993935888207, guid: 3bbc7de8d2dbcfd4c9adf1709cc419a0, type: 3}
   state: 0
   attack_delay: 1
+  attack_time: 0
   target: {fileID: 0}
 --- !u!1001 &1814156748466756120
 PrefabInstance:

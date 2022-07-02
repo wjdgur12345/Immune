@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TowerCreateField : MonoBehaviour
 {
+    public GameObject spawn_point_object = null;
     [SerializeField]
     private float spawnPointX;
     [SerializeField]
@@ -147,7 +148,11 @@ public class TowerCreateField : MonoBehaviour
     */
     public void CreateTower(int index)
     {
-        spawner.GetComponent<TowerSpawner>().SetUnitWayPoint(spawnPointX, spawnPointY);
+        if(spawn_point_object == null)
+            spawner.GetComponent<TowerSpawner>().SetUnitWayPoint(spawnPointX, spawnPointY);
+        else
+            spawner.GetComponent<TowerSpawner>().SetUnitWayPoint(spawn_point_object.transform.position.x , 
+                spawn_point_object.transform.position.y);
         tower = spawner.GetComponent<TowerSpawner>().CreateTower(transform.position.x, transform.position.y, index);
         for (int i = 0; i < TowerCreateButton.Length; i++)
         {

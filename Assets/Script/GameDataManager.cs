@@ -42,8 +42,9 @@ public class GameDataManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
-        GameObject temp = GameObject.Find("Status_Coin");
-        if(temp != null)
+
+        Debug.Log("OnSceneLoaded: " + GameObject.Find("Status_Coin"));
+        if (GameObject.Find("Status_Coin") != null)
         {
             GameObject.Find("Status_Coin").GetComponent<MainMenuUIState>().StateLoad();
             GameObject.Find("Status_Star").GetComponent<MainMenuUIState>().StateLoad();
