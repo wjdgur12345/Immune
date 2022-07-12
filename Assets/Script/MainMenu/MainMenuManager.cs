@@ -73,4 +73,9 @@ public class MainMenuManager : MonoBehaviour
                 break;
         }
     }
+
+    public void GoToCollection()
+    {
+        SceneManager.LoadScene("Character_list"); 
+    }
 }

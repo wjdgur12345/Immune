@@ -80,6 +80,7 @@
     <Compile Include="Assets\Asset\GUI PRO Kit - Simple Casual\Scripts\Panel.cs" />
     <Compile Include="Assets\Asset\GUI PRO Kit - Simple Casual\Scripts\PanelControl.cs" />
     <Compile Include="Assets\Script\Bullet.cs" />
+    <Compile Include="Assets\Script\CollectionSceneManager.cs" />
     <Compile Include="Assets\Script\EnemyAttackEffect.cs" />
     <Compile Include="Assets\Script\EnemyHPBar.cs" />
     <Compile Include="Assets\Script\EnemyManager.cs" />
